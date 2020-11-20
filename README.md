@@ -26,6 +26,16 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
   sc.tl.umap(prot_adata)
 ```
 
+# Installation
+
+```
+  git clone git@github.com:tariqdaouda/MWNN.git
+  cd MWNN
+  python setup.py
+```
+
+Alternatively you can just copy the mwnn.py altought I do not condone copy / pasting as it a sure way to maintenance hell.
+
 # References
 * [WNN paper](https://www.biorxiv.org/content/10.1101/2020.10.12.335331v1)
 * [R implementation from the authors](https://github.com/satijalab/seurat)
