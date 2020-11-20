@@ -8,7 +8,7 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
 
 # How to use it
 ```python
-  from mwnn import MWNN
+  from mwnn.mwnn import MWNN
   
   rna_adata = sc.read("scRNASeq.h5ad")
   prot_adata = sc.read("CITESeq.h5ad")
