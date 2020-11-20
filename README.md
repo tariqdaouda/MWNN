@@ -34,7 +34,7 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
   python setup.py
 ```
 
-Alternatively you can just copy the mwnn.py altought I do not condone copy / pasting as it a sure way to maintenance hell.
+Alternatively you can just copy the mwnn.py in your current folder, altought I do not condone copy / pasting as it a sure way to maintenance hell.
 
 # References
 * [WNN paper](https://www.biorxiv.org/content/10.1101/2020.10.12.335331v1)
