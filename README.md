@@ -4,9 +4,26 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
 
 ## Differences between MWNN and WNN
 * Support for an arbitrary number of modalities, at the moment WNN supports only [two](https://github.com/satijalab/seurat/issues/3693)
-* Possibility to radius nearest neighbors instead of KNN
+* Possibility to use radius nearest neighbors instead of KNN
 
+# How to use it
+```python
+  rna_adata = sc.read("scRNASeq.h5ad")
+  prot_adata = sc.read("CITESeq.h5ad")
+
+  sc.pp.pca(rna_adata, n_comps=30)
+  sc.pp.pca(prot_adata, n_comps=18)
+
+  wnn = WNN()
+  wnn.add_modality(rna_adata.obsm["X_pca"], "rna", 20)
+  wnn.add_modality(prot_adata.obsm["X_pca"], "protein", 20)
+  wnn.fit()
+
+  prot_adata.obsm["wnn"] = wnn.weighted_similarities
+  sc.pp.neighbors(prot_adata, use_rep="wnn")
+  sc.tl.umap(prot_adata)
+```
 
 # References
-[WNN paper](https://www.biorxiv.org/content/10.1101/2020.10.12.335331v1)
-[R implementation from the authors](https://github.com/satijalab/seurat)
+* [WNN paper](https://www.biorxiv.org/content/10.1101/2020.10.12.335331v1)
+* [R implementation from the authors](https://github.com/satijalab/seurat)
