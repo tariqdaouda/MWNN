@@ -8,19 +8,21 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
 
 # How to use it
 ```python
+  from mwnn import MWNN
+  
   rna_adata = sc.read("scRNASeq.h5ad")
   prot_adata = sc.read("CITESeq.h5ad")
 
   sc.pp.pca(rna_adata, n_comps=30)
   sc.pp.pca(prot_adata, n_comps=18)
 
-  wnn = WNN()
-  wnn.add_modality(rna_adata.obsm["X_pca"], "rna", 20)
-  wnn.add_modality(prot_adata.obsm["X_pca"], "protein", 20)
-  wnn.fit()
+  mwnn = MWNN()
+  mwnn.add_modality(rna_adata.obsm["X_pca"], "rna", 20)
+  mwnn.add_modality(prot_adata.obsm["X_pca"], "protein", 20)
+  mwnn.fit()
 
-  prot_adata.obsm["wnn"] = wnn.weighted_similarities
-  sc.pp.neighbors(prot_adata, use_rep="wnn")
+  prot_adata.obsm["mwnn"] = wnn.weighted_similarities
+  sc.pp.neighbors(prot_adata, use_rep="mwnn")
   sc.tl.umap(prot_adata)
 ```
 
