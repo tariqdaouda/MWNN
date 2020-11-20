@@ -17,6 +17,7 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
   sc.pp.pca(prot_adata, n_comps=18)
 
   mwnn = MWNN()
+  #we are using 20 neighbors for both modalities
   mwnn.add_modality(rna_adata.obsm["X_pca"], "rna", 20)
   mwnn.add_modality(prot_adata.obsm["X_pca"], "protein", 20)
   mwnn.fit()
