@@ -22,7 +22,7 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
   mwnn.add_modality(prot_adata.obsm["X_pca"], "protein", 20)
   mwnn.fit()
 
-  prot_adata.obsm["mwnn"] = wnn.weighted_similarities
+  prot_adata.obsm["mwnn"] = mwnn.weighted_similarities
   sc.pp.neighbors(prot_adata, use_rep="mwnn")
   sc.tl.umap(prot_adata)
 ```

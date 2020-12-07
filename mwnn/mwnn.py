@@ -7,7 +7,7 @@ import gc
 class MWNN(object):
     """MWNN"""
     def __init__(self):
-        super(WNN, self).__init__()
+        super(MWNN, self).__init__()
         self.modalities = {}
         self.weighted_similarities = 0
         
