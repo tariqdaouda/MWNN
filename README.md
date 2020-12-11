@@ -32,7 +32,7 @@ This is a python implementation of [Weighted Nearest Neighbors](https://www.bior
 ```
   git clone git@github.com:tariqdaouda/MWNN.git
   cd MWNN
-  python setup.py
+  python setup.py develop
 ```
 
 Alternatively you can just copy the mwnn.py in your current folder, altought I do not condone copy / pasting as it a sure way to maintenance hell.
